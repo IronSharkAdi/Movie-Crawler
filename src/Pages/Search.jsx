@@ -14,14 +14,14 @@ function Search() {
         setLoading(false)
         console.log(data)
         // console.log(data["Title"])
-        })
+        })         
       }, [] );
     return (
         <div>
             <h1>Search</h1>
             {loading ? "loading" : data.map((object , key) =>{return(
                 <><div>
-                    <Link to={`/movie/${object.imdbID}`}>
+                    <Link to={`/movie/${object.Title}`}>
                         <h1 key={key} >{object.Title}</h1>
                         <img src={object.Poster} alt={object.Title}/>
                     </Link>
