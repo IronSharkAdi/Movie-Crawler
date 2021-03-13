@@ -1,7 +1,7 @@
 import axios from 'axios';
 import React , {useEffect, useState} from 'react'
 import { Link, useParams } from 'react-router-dom';
- 
+import './Id.css'
 
 function Id() {
     let { id } = useParams();
@@ -20,12 +20,15 @@ function Id() {
       }, [] );
 
     return (
-        <div>
-            <h1>Show Page</h1>
+        <div className="id">
             {loading ? "loading" : (
-                <><div>
-                        <h1  >{data.Title}</h1>
-                        <img src={data.Poster} alt={data.Title}/>
+                <><div className="id_container">
+                        <h1 className="title" >{data.Title} ({data.Year}) </h1>
+                        <img src={data.Poster} className="poster" alt={data.Title}/>
+                        <h3 className="plot" >{data.Plot} </h3>
+                        <h4 className="genre">{data.Genre}</h4>
+                        <p className="rating"> {data.imdbRating} </p>
+                        <h4 className="actors" > {data.Actors} </h4>
                 </div>
             </>
             )} 
